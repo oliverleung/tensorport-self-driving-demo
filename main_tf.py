@@ -150,7 +150,7 @@ def main():
 
     print(FLAGS.logs_dir)
     print(FLAGS.train_data_dir)
-    
+
     if FLAGS.logs_dir is None or FLAGS.logs_dir == "":
         raise ValueError("Must specify an explicit `logs_dir`")
     if FLAGS.train_data_dir is None or FLAGS.train_data_dir == "":
@@ -172,8 +172,7 @@ def main():
         steering_summary = tf.summary.image("green-is-predicted",render_steering_tf(X,Y,S,predictions)) # Adding numpy operation to graph. Adding image to summary
         loss = get_loss(predictions,Y)
         training_summary = tf.summary.scalar('Training_Loss', loss)#add to tboard
-        validation_summary = tf.summary.scalar('Validation_Loss', loss)
-
+        
         #Batch generators
         gen_train = gen(FLAGS.train_data_dir, time_len=FLAGS.time, batch_size=FLAGS.batch, ignore_goods=FLAGS.nogood)
 
