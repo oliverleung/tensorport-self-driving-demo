@@ -184,8 +184,7 @@ logs and tensorboard.
 You can also use the CLI to track what is happening on the server. There is a
 pretty cool command that just listens to the events on the paltform and displays
 them in terminal.
-Try:
-```
+Try: `tport watch`
 
 
 
